@@ -2,7 +2,7 @@
 
 > 无损图片元数据清理器 · Lossless Image Metadata Cleaner
 
-一个**不依赖浏览器、可独立运行的桌面程序**，用于移除图片中的元数据（AI 标记、C2PA 内容凭证、拍照时间、GPS 经纬度、设备信息等），并可自定义选择保留/移除哪些项。**完全不损害画质、像素与色彩**——采用字节级手术，只改元数据段，图像压缩数据原样保留，并用 SHA256 像素指纹逐张校验。
+一个用于移除图片中的元数据（AI 标记、C2PA 内容凭证、拍照时间、GPS 经纬度、设备信息等），并可自定义选择保留/移除哪些项。**完全不损害画质、像素与色彩**——采用字节级手术，只改元数据段，图像压缩数据原样保留，并用 SHA256 像素指纹逐张校验。
 
 A **standalone desktop app (no browser required)** that strips image metadata (AI markers, C2PA provenance, capture time, GPS coordinates, device info, etc.) while letting you choose precisely what to keep or remove. **Image quality, pixels, and colors are never touched**—a byte-level operation edits only metadata segments and keeps the compressed image data intact, verified per-file with a SHA256 pixel fingerprint.
 
@@ -58,10 +58,6 @@ pip install -r requirements.txt
 python -m PyInstaller --windowed --onefile --name MetaPurifier main.py
 # 生成的单文件程序位于 dist/MetaPurifier.exe
 ```
-
-> 提示：毛玻璃效果依赖 Windows DWM（Win10/11）。在其他平台运行核心清理逻辑同样无损，但毛玻璃背景会回退为纯色。
-
-> Note: The frosted-glass effect relies on the Windows DWM (Win10/11). On other platforms the lossless cleanup logic works identically, but the glass background falls back to a solid color.
 
 ---
 
