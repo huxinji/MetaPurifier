@@ -1,0 +1,48 @@
+name: Build Release Assets
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    name: Windows exe (x64)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Build executable
+        run: python -m PyInstaller --windowed --onefile --name MetaPurifier main.py
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/MetaPurifier.exe
+
+  macos:
+    name: macOS dmg (Apple Silicon)
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Build .app bundle
+        run: python -m PyInstaller --windowed --name MetaPurifier main.py
+      - name: Create DMG
+        run: |
+          hdiutil create -volname MetaPurifier -srcfolder dist/MetaPurifier.app -ov -format UDZO dist/MetaPurifier.dmg
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/MetaPurifier.dmg
