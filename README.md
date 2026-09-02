@@ -67,6 +67,9 @@ python -m PyInstaller --windowed --onefile --name MetaPurifier main.py
 2. **选择要移除的项 · Choose what to remove**：在右侧勾选树中勾选需要移除的元数据（勾选 = 移除）。也可点击上方预设按钮一键选择。
 3. **选择输出方式 · Pick output**：覆盖原图（建议保留备份）/ 另存目录 / 加后缀副本。
 4. **开始清理 · Run**：点击「开始清理 / Start」，程序逐张处理并在日志中显示结果（移除项数、体积变化、像素校验状态）。
+   
+<img width="1198" height="685" alt="PixPin_2026-09-02_10-58-30" src="https://github.com/user-attachments/assets/0220ae62-bd92-4042-a8be-b45056d2baa8" />
+<img width="1198" height="685" alt="PixPin_2026-09-02_10-58-41" src="https://github.com/user-attachments/assets/fbb9b0d0-0672-48d5-8dee-275f29b09104" />
 
 ---
 
