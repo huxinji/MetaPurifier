@@ -37,7 +37,7 @@ A **standalone desktop app (no browser required)** that strips image metadata (A
 
 ### 方式一：直接下载（推荐）· Download (Recommended)
 
-前往 **Releases** 页面下载 `MetaPurifier.exe`，双击即可运行，无需安装 Python 或任何依赖。
+前往 **Releases** 页面下载 `MetaPurifier.exe`或`MetaPurifier.dmg`，双击即可运行，无需安装 Python 或任何依赖。
 
 Go to the **Releases** page and download `MetaPurifier.exe`—just double-click to run. No Python or dependencies required.
 
